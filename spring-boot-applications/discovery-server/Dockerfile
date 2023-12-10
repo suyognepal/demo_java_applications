@@ -9,7 +9,7 @@ RUN mvn package
 # Stage 2: Run Stage
 FROM openjdk:latest
 WORKDIR /opt/
-# Copy the WAR file from the build stage to Tomcat's webapps directory
+# Copy the WAR file from the build stage to workdir
 COPY --from=build /usr/local/app/target/discovery-server-0.0.1-SNAPSHOT.jar .
 
 
